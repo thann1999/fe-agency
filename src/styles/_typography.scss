@@ -1,0 +1,17 @@
+.ellipse-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a {
+  color: $color-primary !important;
+}
+
+.primary-text {
+  color: $color-primary;
+}
+
+.danger-text {
+  color: $color-danger;
+}

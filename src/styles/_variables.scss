@@ -1,0 +1,47 @@
+$max-width-layout: 1920px;
+$min-width-screen-xl: 1536px;
+$max-screen-lg: 1200px;
+$max-screen-md: 992px;
+
+//Width, height common component
+$header-height: 50px;
+
+// Color Variables
+$color-black: #000000;
+$color-sub-black: #535353;
+$color-sub-black1: #575d6c;
+$color-header-select-bg: #464c59;
+$color-header-select-text: #adb0b8;
+$color-text: #6e6b7b;
+$color-secondary: #82868b;
+$color-border: #d9d9d9;
+$color-border-focus: #1174d4;
+$color-white: #ffffff;
+$color-sub-white1: #f2f5fc;
+$color-gray-1: #f8f8f8;
+$color-gray-2: #edf0f4;
+$color-success: #28c76f;
+$color-success1: #51a351;
+$color-danger: #ea5455;
+$color-primary: #1c9ad6;
+$color-primary-transparent: rgba($color-primary, 0.3);
+$color-danger-transparent: rgba($color-danger, 0.4);
+$color-warning: #ff9f43;
+$color-tooltip-background: #dde4ed;
+$color-chart-border: #f0f0f0;
+$color-chart-label: #9b9b9b;
+
+// margin/padding
+$space-unit: 20px;
+$space-XXS: 0.5 * $space-unit;
+$space-XS: 1 * $space-unit;
+$space-S: 1.5 * $space-unit;
+$space-MS: 2 * $space-unit;
+$space-M: 2.5 * $space-unit;
+$space-ML: 3 * $space-unit;
+$space-L: 3.5 * $space-unit;
+$space-LL: 4 * $space-unit;
+$space-XL: 4.5 * $space-unit;
+$space-XXL: 5 * $space-unit;
+$space-XXXL: 6 * $space-unit;
+$space-XXXXL: 7 * $space-unit;

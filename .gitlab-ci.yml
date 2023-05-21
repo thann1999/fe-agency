@@ -1,0 +1,38 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  only:
+    - dev
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: ['']
+  before_script:
+    - echo "{\"auths\":{\"nexus.api-connect.io\":{\"auth\":\"$(printf "%s:%s" "manhnt1" "qwe123!@#" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - cat /kaniko/.docker/config.json
+    - cat .env
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --cache=true
+      --build-arg VITE_REACT_APP_BASE_NAME=$VITE_REACT_APP_BASE_NAME
+      --build-arg VITE_REACT_APP_BASE_URL=$VITE_REACT_APP_BASE_URL
+      --build-arg VITE_REACT_APP_BASE_API_URL=$VITE_REACT_APP_BASE_API_URL
+      --destination "nexus.api-connect.io/$CI_PROJECT_NAME:$IMAGE_TAG"
+      --destination "nexus.api-connect.io/$CI_PROJECT_NAME:latest"
+
+deploy:
+  stage: deploy
+  only:
+    - dev
+  image: alpine/k8s:1.23.16
+  variables:
+    IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+  script: |
+    sh k8s-deployment/deploy.sh

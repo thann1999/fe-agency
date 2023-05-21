@@ -1,0 +1,14 @@
+@import '@styles/variables';
+
+:export {
+  colorSucess: $color-success;
+  colorDanger: $color-danger;
+  colorText: $color-text;
+  colorTooltipBackground: $color-tooltip-background;
+  colorBorder: $color-border;
+  colorChartBorder: $color-chart-border;
+  colorChartLabel: $color-chart-label;
+  colorPrimary: $color-primary;
+  colorPrimaryTransparent: $color-primary-transparent;
+  colorDangerTransparent: $color-danger-transparent;
+}

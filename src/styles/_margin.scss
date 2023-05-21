@@ -1,0 +1,96 @@
+@use 'sass:map';
+@use 'sass:math';
+@import 'variables';
+
+/**
+* Add more spacing if you need 
+*/
+$_spacings: (
+  0: math.div(0, 16),
+  2: math.div(2, 16),
+  4: math.div(4, 16),
+  6: math.div(6, 16),
+  8: math.div(8, 16),
+  10: math.div(10, 16),
+  12: math.div(12, 16),
+  14: math.div(14, 16),
+  16: math.div(16, 16),
+  20: math.div(20, 16),
+  24: math.div(24, 16),
+  28: math.div(28, 16),
+  30: math.div(30, 16),
+  32: math.div(32, 16),
+  36: math.div(36, 16),
+  40: math.div(40, 16),
+  44: math.div(44, 16),
+  56: math.div(56, 16),
+  64: math.div(64, 16),
+  80: math.div(80, 16),
+  96: math.div(96, 16),
+  112: math.div(112, 16),
+  128: math.div(128, 16),
+);
+
+@each $_spacing_key, $_spacing in $_spacings {
+  .mt-#{$_spacing_key} {
+    margin-top: $_spacing + rem !important;
+  }
+
+  .mr-#{$_spacing_key} {
+    margin-right: $_spacing + rem !important;
+  }
+
+  .mb-#{$_spacing_key} {
+    margin-bottom: $_spacing + rem !important;
+  }
+
+  .ml-#{$_spacing_key} {
+    margin-left: $_spacing + rem !important;
+  }
+
+  .ma-#{$_spacing_key} {
+    margin: $_spacing + rem !important;
+  }
+
+  .mx-#{$_spacing_key} {
+    margin-left: $_spacing + rem !important;
+    margin-right: $_spacing + rem !important;
+  }
+
+  .my-#{$_spacing_key} {
+    margin-top: $_spacing + rem !important;
+    margin-bottom: $_spacing + rem !important;
+  }
+}
+
+@each $_spacing_key, $_spacing in $_spacings {
+  .pt-#{$_spacing_key} {
+    padding-top: $_spacing + rem !important;
+  }
+
+  .pr-#{$_spacing_key} {
+    padding-right: $_spacing + rem !important;
+  }
+
+  .pb-#{$_spacing_key} {
+    padding-bottom: $_spacing + rem !important;
+  }
+
+  .pl-#{$_spacing_key} {
+    padding-left: $_spacing + rem !important;
+  }
+
+  .pa-#{$_spacing_key} {
+    padding: $_spacing + rem !important;
+  }
+
+  .px-#{$_spacing_key} {
+    padding-left: $_spacing + rem !important;
+    padding-right: $_spacing + rem !important;
+  }
+
+  .py-#{$_spacing_key} {
+    padding-top: $_spacing + rem !important;
+    padding-bottom: $_spacing + rem !important;
+  }
+}
